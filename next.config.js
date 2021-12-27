@@ -1,4 +1,3 @@
-const { i18n } = require("./next-i18next.config");
 const webpack = require("webpack");
 const path = require("path");
 const withFonts = require("next-fonts");
@@ -7,17 +6,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const nextConfig = {
-  exportPathMap: function () {
-    return {
-      "/": { page: "/" },
-      "/docs": {
-        page: "/docs",
-      },
-      "/contact": {
-        page: "/contact",
-      },
-    };
-  },
   webpack: (config) => {
     config.resolve.modules = [
       path.resolve("./node_modules"),
@@ -29,6 +17,4 @@ const nextConfig = {
   },
 };
 
-module.exports = {
-  i18n,
-};
+module.exports = withFonts(withBundleAnalyzer(nextConfig));

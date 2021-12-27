@@ -12,7 +12,6 @@ import { useInput } from "hooks/useInput";
 import * as React from "react";
 
 export default function Login(): JSX.Element {
-  console.log("login");
   const username = useInput("", emailValidator);
   const password = useInput("");
 

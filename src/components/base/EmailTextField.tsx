@@ -14,7 +14,6 @@ export default function EmailTextField({
 }: EmailTextFieldProps) {
   const { t } = useTranslation("common");
 
-  console.log(t("loginEmailTitle"));
   return (
     <TextField
       error={error}
